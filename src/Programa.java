@@ -10,7 +10,7 @@ public class Programa {
 		public int numero;
 		public double valor;
 		public int pedido;
-		public Pilha prox;
+		public Pilha proximo;
 	}
 
 	public static void main(String[] args) {
@@ -30,6 +30,16 @@ public class Programa {
 			}
 			if (op == 1) {
 				log("Opção 1 - Empilhar chapas");
+				Pilha novo = new Pilha();
+                novo.numero = 
+                Integer.parseInt(JOptionPane.showInputDialog("NÚMERO DA CHAPA", "0"));
+                novo.valor = 
+                Double.parseDouble(JOptionPane.showInputDialog("VALOR DA CHAPA", "0"));                
+                novo.pedido = 
+                Integer.parseInt(JOptionPane.showInputDialog("NÚMERO DO PEDIDO", "0"));
+                // Operacoes de empilhamento
+                novo.proximo = topo;
+                topo = novo;
 			}
 			if (op == 2) {
 				if (topo == null) {
