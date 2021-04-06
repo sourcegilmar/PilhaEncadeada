@@ -83,11 +83,21 @@ public class Programa {
 				} else {
 					topo = null;
 					JOptionPane.showMessageDialog(null, "A pilha foi esvaziada",
-							"Mensagem do sistema", JOptionPane.INFORMATION_MESSAGE);	
+							"Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);	
 				}
 			}
 			if (op == 5) {
 				log("Opção 5 - Verifica quantidade de chapas");
+				  if (op == 5) {
+		                aux = topo;
+		                int n = 0;
+		                while (aux != null) {
+		                    aux = aux.proximo;
+		                    n++;
+		                }
+		                JOptionPane.showMessageDialog(null, "A Pilha contém: " + n + " elementos.",
+		                		"Mensagem do programa",JOptionPane.INFORMATION_MESSAGE);
+		            }
 			}
 		} while (op != 6);
 		log("Opção 6 - >>> Programa finalizado!");
