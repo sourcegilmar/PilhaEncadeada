@@ -1,6 +1,6 @@
 # PilhaEncadeada
 
-Este programa usa a técnica de pilha encadeada para mostrar algumas operações em um estudado de caso onde há pilhas métalicas colocadas em um pátio, as operações são as seguintes:
+Este programa usa a técnica de pilha encadeada para mostrar algumas operações em um estudo de caso onde há pilhas métalicas colocadas em um pátio, as operações são as seguintes:
 
 1 - Empilhar chapas
 2 - Consultar todas a chapas
