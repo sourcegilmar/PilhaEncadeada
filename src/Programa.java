@@ -17,8 +17,8 @@ public class Programa {
 	}
 
 	public static void main(String[] args) {
-		Pilha topo = null;
-		Pilha aux;
+		Pilha topoPilha = null;
+		Pilha auxiliar;
 		int op = 0;
 		do {
 			String menu = "\nMENU DE OPÇÕES\n" + "\n1 - Empilhar Chapas." + "\n2 - Consultar Todas as Chapas."
@@ -31,19 +31,18 @@ public class Programa {
 				JOptionPane.showMessageDialog(null, "A PILHA está vazia!", "Mensagem do Programa",
 						JOptionPane.INFORMATION_MESSAGE);
 			}
-			if (op == 1) {
-				log("Opção 1 - Empilhar chapas");
+			if (op == 1) {				
 				Pilha novo = new Pilha();
 				novo.numero = Integer.parseInt(JOptionPane.showInputDialog("NÚMERO DA CHAPA", "0"));
 				novo.valor = Double.parseDouble(JOptionPane.showInputDialog("VALOR DA CHAPA", "0"));
 				novo.pedido = Integer.parseInt(JOptionPane.showInputDialog("NÚMERO DO PEDIDO", "0"));
 				// Operacoes de empilhamento
-				novo.proximo = topo;
-				topo = novo;
+				novo.proximo = topoPilha;
+				topoPilha = novo;
+				log("Opção 1 - Empilhar chapas");
 			}
-			if (op == 2) {
-				if (topo == null) {
-					log("Opção 2 - Consultar todas a chapas");
+			if (op == 2) {				
+				if (topoPilha == null) {					
 					JOptionPane.showMessageDialog(null, "A PILHA está vazia!", "Mensagem do Programa",
 							JOptionPane.INFORMATION_MESSAGE);
 				} else {
@@ -52,51 +51,50 @@ public class Programa {
 					JScrollPane scroll = new JScrollPane(saida);
 					saida.append("NÚMERO\t" + "VALOR\t" + "PEDIDO\n");
 					saida.append("===============================\n");
-					aux = topo;
-					while (aux != null) {
-						System.out.println("Endereço de memória => " + aux.hashCode());
-						saida.append(aux.numero + "\t" + aux.valor + "\t" + aux.pedido + "\n");
-						aux = aux.proximo;
+					auxiliar = topoPilha;
+					while (auxiliar != null) {
+						System.out.println("Endereço de memória => " + auxiliar.hashCode());
+						saida.append(auxiliar.numero + "\t" + auxiliar.valor + "\t" + auxiliar.pedido + "\n");
+						auxiliar = auxiliar.proximo;
 					}
 					JOptionPane.showMessageDialog(null, scroll, "CONSULTAR CHAPAS CADASTRADAS",
 							JOptionPane.INFORMATION_MESSAGE);
-
+					log("Opção 2 - Consultar todas a chapas");
 				}
 			}
 			if (op == 3) {
-				if (topo == null) {
-					log("Opção 3 - Desempilhar");
+				if (topoPilha == null) {					
 					JOptionPane.showMessageDialog(null, "A PILHA está vazia!", "Mensagem do Programa",
 							JOptionPane.INFORMATION_MESSAGE);
 				} else {
-					JOptionPane.showMessageDialog(null,"Número: " + topo.numero + ", foi removido.",
+					JOptionPane.showMessageDialog(null,"Número: " + topoPilha.numero + ", foi removido.",
 							"Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
-	                 topo = topo.proximo;
-
+	                 topoPilha = topoPilha.proximo;
+	                 log("Opção 3 - Desempilhar");
 				}
 			}
 			if (op == 4) {
-				if (topo == null) {
-					log("Opção 4 - Esvaziar Pilha de chapas");
+				if (topoPilha == null) {					
 					JOptionPane.showMessageDialog(null, "A PILHA está vazia!", "Mensagem do Programa",
 							JOptionPane.INFORMATION_MESSAGE);
 				} else {
-					topo = null;
+					topoPilha = null;
 					JOptionPane.showMessageDialog(null, "A pilha foi esvaziada",
-							"Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);	
+							"Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
+					log("Opção 4 - Esvaziar Pilha de chapas");
 				}
 			}
 			if (op == 5) {
-				log("Opção 5 - Verifica quantidade de chapas");
 				  if (op == 5) {
-		                aux = topo;
+		                auxiliar = topoPilha;
 		                int n = 0;
-		                while (aux != null) {
-		                    aux = aux.proximo;
+		                while (auxiliar != null) {
+		                    auxiliar = auxiliar.proximo;
 		                    n++;
 		                }
 		                JOptionPane.showMessageDialog(null, "A Pilha contém: " + n + " elementos.",
 		                		"Mensagem do programa",JOptionPane.INFORMATION_MESSAGE);
+		                		log("Opção 5 - Verifica quantidade de chapas");
 		            }
 			}
 		} while (op != 6);
