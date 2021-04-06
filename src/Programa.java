@@ -81,7 +81,9 @@ public class Programa {
 					JOptionPane.showMessageDialog(null, "A PILHA está vazia!", "Mensagem do Programa",
 							JOptionPane.INFORMATION_MESSAGE);
 				} else {
-
+					topo = null;
+					JOptionPane.showMessageDialog(null, "A pilha foi esvaziada",
+							"Mensagem do sistema", JOptionPane.INFORMATION_MESSAGE);	
 				}
 			}
 			if (op == 5) {
