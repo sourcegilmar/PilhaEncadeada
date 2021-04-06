@@ -9,3 +9,4 @@ Este programa usa a técnica de pilha encadeada para mostrar algumas operações
 5 - Verifica quantidade de chapas
 
 A opção 6 encerra o programa
+Disciplina: Algoritmos e estruturas de dados
