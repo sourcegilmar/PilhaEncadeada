@@ -69,6 +69,9 @@ public class Programa {
 					JOptionPane.showMessageDialog(null, "A PILHA está vazia!", "Mensagem do Programa",
 							JOptionPane.INFORMATION_MESSAGE);
 				} else {
+					JOptionPane.showMessageDialog(null,"Número: " + topo.numero + ", foi removido.",
+							"Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
+	                 topo = topo.proximo;
 
 				}
 			}
